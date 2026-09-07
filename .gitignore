@@ -21,6 +21,7 @@ dist
 # lock files
 yarn.lock
 package-lock.json
+bun.lock
 
 # debug files
 npm-debug.log*
