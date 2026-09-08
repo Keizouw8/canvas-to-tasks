@@ -6,8 +6,10 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "typescript": "7.0.2",
-    "extension": "^4.1.14"
+    "@types/chrome": "^0.2.9",
+    "extension": "^4.1.14",
+    "svelte-loader": "^3.2.4",
+    "typescript": "7.0.2"
   },
   "scripts": {
     "dev": "extension dev",
@@ -18,6 +20,8 @@
     "build:firefox": "extension build --browser firefox",
     "build:edge": "extension build --browser edge"
   },
-  "dependencies": {},
+  "dependencies": {
+    "svelte": "^5.57.0"
+  },
   "packageManager": "bun@1.4.0"
 }
