@@ -1,6 +1,4 @@
-<script lang="ts">
-	import "@fontsource/roboto";
-	
+<script lang="ts">	
 	let syncing = $state(false);
 	
 	async function sync(){
