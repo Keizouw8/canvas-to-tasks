@@ -10,6 +10,6 @@
 </script>
 
 <button id="sync" onclick={sync} class={syncing ? "busy" : ""} disabled={syncing}>
-	<img class={syncing ? "spinner" : ""} src="https://www.wabash.edu/images2/technology/canvas.png" alt="canvas logo">
 	<span>{syncing ? "Syncing" : "Sync"}</span>
+	<img class={syncing ? "spinner" : ""} src="https://www.wabash.edu/images2/technology/canvas.png" alt="canvas logo">
 </button>
