@@ -1,14 +1,10 @@
-const SETTINGS_KEY = "settings";
+import getSettings from "./events/getSettings";
+import setSettings from "./events/setSettings";
+import sync from "./events/sync";
 
 chrome.runtime.onMessage.addListener(async function ({ event, payload }: Message, sender, sendResponse) {
-	if (event == "sync") {
-		sendResponse(await sync());
-		return true;
-	}
+    if (event == "sync") sendResponse(await sync());
+    if (event == "getSettings") sendResponse(await getSettings());
+	if (event == "setSettings") sendResponse(await setSettings(payload));
+	return true;
 });
-
-async function sync() {
-	// Sync Canvas assignments to Google tasks here
-    await new Promise(resolve => setTimeout(resolve, 3000));
-	return { success: true };
-}

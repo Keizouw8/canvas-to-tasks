@@ -6,8 +6,8 @@ const defaultSettings: Settings = {
 };
 
 export async function getSettings(): Promise<Settings> {
-	const result = await browser.storage.sync.get([SETTINGS_KEY]);
-	return result[SETTINGS_KEY] ?? defaultSettings;
+	const result = await browser.storage.sync.get({ settings: defaultSettings });
+	return result[SETTINGS_KEY];
 }
 
 export async function setSettings(settings: Settings): Promise<void> {
