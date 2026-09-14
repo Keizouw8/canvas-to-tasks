@@ -1,10 +1,9 @@
-import getSettings from "./events/getSettings";
-import setSettings from "./events/setSettings";
 import sync from "./events/sync";
+import { getSettings, setSettings } from "./lib/storage";
+
+const events: { [key: string]: Function } = { sync, getSettings, setSettings };
 
 chrome.runtime.onMessage.addListener(async function ({ event, payload }: Message, sender, sendResponse) {
-    if (event == "sync") sendResponse(await sync());
-    if (event == "getSettings") sendResponse(await getSettings());
-	if (event == "setSettings") sendResponse(await setSettings(payload));
+	if (event in events) sendResponse(await events[event](payload));
 	return true;
 });
