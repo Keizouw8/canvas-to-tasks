@@ -1,7 +1,4 @@
-type Message = {
-	event: string;
-	payload: any;
-}
+const SETTINGS_KEY = "settings";
 
 chrome.runtime.onMessage.addListener(async function ({ event, payload }: Message, sender, sendResponse) {
 	if (event == "sync") {
@@ -12,5 +9,6 @@ chrome.runtime.onMessage.addListener(async function ({ event, payload }: Message
 
 async function sync() {
 	// Sync Canvas assignments to Google tasks here
+    await new Promise(resolve => setTimeout(resolve, 3000));
 	return { success: true };
 }
