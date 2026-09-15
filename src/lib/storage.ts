@@ -1,6 +1,6 @@
 const SETTINGS_KEY = "settings";
 
-const defaultSettings: Settings = {  
+export const defaultSettings: Settings = {  
     canvasURL: "",
     canvasToken: ""
 };
